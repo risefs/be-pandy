@@ -1,9 +1,10 @@
-import { Title, Text, Anchor } from '@mantine/core';
+import { Title, Text, Anchor, Button } from '@mantine/core';
 import classes from './Welcome.module.css';
+import { logout } from '@/app/actions';
 
 export function Welcome() {
   return (
-    <>
+    <form>
       <Title className={classes.title} ta="center" mt={100}>
         Welcome to{' '}
         <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
@@ -18,6 +19,9 @@ export function Welcome() {
         </Anchor>
         . To get started edit page.tsx file.
       </Text>
-    </>
+      <Button type="submit" formAction={logout}>
+        logout
+      </Button>
+    </form>
   );
 }
